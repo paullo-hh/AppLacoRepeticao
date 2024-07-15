@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.Scanner
 
 fun main(args: Array<String>) {
 
@@ -9,11 +9,10 @@ fun main(args: Array<String>) {
 
     numeroDecimal = conversorBinarioDecimal(numeroBinario)
 
-    println("Número binário $numeroBinario = $numeroDecimal")
-
+    println("A conversão decimal de $numeroBinario que está em binario, é $numeroDecimal .")
 }
 
-fun conversorBinarioDecimal(numeroBinario:Long): Int {
+fun conversorBinarioDecimal(numeroBinario: Long): Int {
 
     var _numeroBinario = numeroBinario
     var _numeroDecimal = 0
@@ -21,14 +20,11 @@ fun conversorBinarioDecimal(numeroBinario:Long): Int {
     var numeroTemporario: Long
 
     while ( _numeroBinario.toInt() != 0 ) {
-
         numeroTemporario = _numeroBinario % 10
         _numeroBinario /= 10
-        _numeroDecimal += (numeroTemporario * Math.pow(2.0, i.toDouble())).toInt()
+        _numeroDecimal += (numeroTemporario * Math.pow( 2.0, i.toDouble())).toInt()
         i++
-
     }
 
     return _numeroDecimal
-
 }
